@@ -12,7 +12,7 @@ function App(){
     return (
         <div className="App">
             <header>
-            <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" variant="dark" bg="dark">
+            <Navbar collapseOnSelect expand="lg" variant="dark" bg="dark">
                     <Container>
                         <Navbar.Brand href="#home">STATUS CHECK</Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -22,10 +22,8 @@ function App(){
                             <Nav.Link href="#pricing">Pricing</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">More deets</Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
-                            </Nav.Link>
+                            <Button type="button">Dashboard</Button>
+                            <Image className="px-2" src="holder.js/171x180" roundedCircle />
                         </Nav>
                         </Navbar.Collapse>
                     </Container>
