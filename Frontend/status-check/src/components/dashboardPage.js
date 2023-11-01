@@ -1,13 +1,11 @@
 import React from "react";
-import NavBar from "./NavBar"; // Assuming you've created the NavBar component
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const userName = "";
 
 const DashboardPage = () => {
   return (
     <div>
-      <NavBar />{" "}
-      {/* Include the navigation bar component at the top of the dashboard page */}
       <div className="container mt-4">
         <h1>Welcome to Your Dashboard {userName} </h1>
         <div className="row mt-4">
