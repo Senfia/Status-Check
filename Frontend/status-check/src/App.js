@@ -8,6 +8,7 @@ import RegistrationPage from "./components/register";
 import LoginPage from "./components/login";
 import SettingsPage from "./components/settingsPage";
 import Footer from "./components/footer";
+import AddMonitorPage from "./components/addMonitor";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="login" element={<LoginPage />}></Route>
         <Route path="dashboard" element={<DashboardPage />}></Route>
         <Route path="settings" element={<SettingsPage />}></Route>
+        <Route path="addMonitor" element={<AddMonitorPage />}></Route>
       </Routes>
       <footer>
         <Footer />

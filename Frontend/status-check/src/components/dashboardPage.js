@@ -1,24 +1,51 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-const userName = "";
+//import NavBar from './NavBar'; // Assuming you've created the NavBar component
+import { Container, Row, Col, Card } from "react-bootstrap";
 
 const DashboardPage = () => {
   return (
     <div>
-      <div className="container mt-4">
-        <h1>Welcome to Your Dashboard {userName} </h1>
-        <div className="row mt-4">
-          <div className="col-md-6">
-            <h2>Quick Stats</h2>
-            {/* Add your dashboard content here, e.g., data, charts, or widgets */}
-          </div>
-          <div className="col-md-6">
-            <h2>Notifications</h2>
-            {/* Display notifications or alerts here */}
-          </div>
-        </div>
-      </div>
+      {/* <header>
+        <NavBar />
+      </header> */}
+      <Container>
+        <Row className="mt-4">
+          <Col md="8">
+            <button className="btn btn-primary py-2">Add Monitor</button>
+            <h2 className="py-4">Dashboard</h2>
+
+            <Card>
+              <Card.Header>Server Status</Card.Header>
+              <Card.Body>
+                {/* Add server status information here */}
+                <p>Server Name: Google Server</p>
+                <p>Status: Online</p>
+              </Card.Body>
+            </Card>
+
+            <Card className="mt-3">
+              <Card.Header>Website Monitoring</Card.Header>
+              <Card.Body>
+                {/* Add website monitoring components here */}
+                <p>Website: www.google.com</p>
+                <p>Status: Online</p>
+                <p>Response Time: 120ms</p>
+              </Card.Body>
+            </Card>
+          </Col>
+
+          <Col md="4">
+            <Card>
+              <Card.Header>Recent Events</Card.Header>
+              <Card.Body>
+                {/* Add recent events information here */}
+                <p>Event 1: Website www.example.com is back online.</p>
+                <p>Event 2: Server maintenance scheduled for tomorrow.</p>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
