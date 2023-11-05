@@ -24,6 +24,7 @@ function App() {
         <Route path="settings" element={<SettingsPage />}></Route>
         <Route path="addMonitor" element={<AddMonitorPage />}></Route>
       </Routes>
+      <main></main>
       <footer>
         <Footer />
       </footer>

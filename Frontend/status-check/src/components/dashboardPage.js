@@ -38,7 +38,7 @@ const DashboardPage = () => {
           </Col>
 
           <Col md="4">
-            <Card>
+            <Card className="">
               <Card.Header>Recent Events</Card.Header>
               <Card.Body>
                 {/* Add recent events information here */}
