@@ -6,8 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background: #060709 !important; */
-  min-height: 100vh;
-  background-color: #e5e7eb;
+  background: rgb(24, 24, 38) !important;
 }
 
 code {
@@ -16,8 +15,31 @@ code {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
+  right: 0;
   bottom: 0;
-  width: 100%;
-  display: block;
+  left: 0;
+  z-index: 1030;
+}
+
+* {
+  color: white;
+}
+
+.card-body {
+  background: rgb(33, 33, 52) !important;
+  padding: 32px 16px 16px 32px;
+  border-radius: 4px;
+  box-shadow: rgba(3, 3, 5, 0.2) 1px 1px 10px;
+  border-color: black !important;
+}
+
+.card-header {
+  background: rgb(33, 33, 52) !important;
+  color: rgb(255, 255, 255);
+  border-color: black !important;
+}
+
+.btn {
+  margin-top: 10px;
 }

@@ -36,7 +36,7 @@ const NavBar = () => {
           >
             <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
+            <NavDropdown.Item href="/login">Logout</NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Container>
