@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* background: #060709 !important; */
   min-height: 100vh;
+  background-color: #e5e7eb;
 }
 
 code {
@@ -18,4 +19,5 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  display: block;
 }

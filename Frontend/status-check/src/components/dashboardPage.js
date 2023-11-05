@@ -1,6 +1,7 @@
 import React from "react";
 //import NavBar from './NavBar'; // Assuming you've created the NavBar component
 import { Container, Row, Col, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const DashboardPage = () => {
   return (
@@ -11,7 +12,9 @@ const DashboardPage = () => {
       <Container>
         <Row className="mt-4">
           <Col md="8">
-            <button className="btn btn-primary py-2">Add Monitor</button>
+            <Link to="addmonitor">
+              <button className="btn btn-primary py-2">Add Monitor</button>
+            </Link>
             <h2 className="py-4">Dashboard</h2>
 
             <Card>
