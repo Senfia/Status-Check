@@ -8,7 +8,6 @@ const RegistrationPage = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -22,31 +21,22 @@ const RegistrationPage = () => {
     setPassword(e.target.value);
   };
 
-  const handleConfirmPasswordChange = (e) => {
-    setConfirmPassword(e.target.value);
-  };
-
   const handleRegistration = () => {
-    if (password === confirmPassword) {
-      // Passwords match, make an API call to register the user
-      axios
-        .post("/api/register", {
-          username,
-          email,
-          password,
-        })
-        .then((response) => {
-          // Handle the response from the server as needed
-          console.log("Registration successful:", response.data);
-        })
-        .catch((error) => {
-          // Handle errors from the server, e.g., display an error message
-          console.error("Registration failed:", error);
-        });
-    } else {
-      // Passwords do not match, you can display an error message or take appropriate action.
-      console.error("Passwords do not match");
-    }
+    //make an API call to register the user
+    axios
+      .post("/api/register", {
+        username,
+        email,
+        password,
+      })
+      .then((response) => {
+        // Handle the response from the server as needed
+        console.log("Registration successful:", response.data);
+      })
+      .catch((error) => {
+        // Handle errors from the server, e.g., display an error message
+        console.error("Registration failed:", error);
+      });
   };
 
   return (
@@ -83,16 +73,6 @@ const RegistrationPage = () => {
                   placeholder="Password"
                   value={password}
                   onChange={handlePasswordChange}
-                />
-              </Form.Group>
-
-              <Form.Group controlId="formBasicConfirmPassword">
-                <Form.Label>Confirm Password</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Confirm Password"
-                  value={confirmPassword}
-                  onChange={handleConfirmPasswordChange}
                 />
               </Form.Group>
 
