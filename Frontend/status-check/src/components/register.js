@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom"; // Import the Link component from React Router
-import axios from "axios"; // Import Axios
+import axios from "axios";
 
 const RegistrationPage = () => {
   const [username, setUsername] = useState("");
