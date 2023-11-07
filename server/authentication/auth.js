@@ -3,27 +3,38 @@ const jwt = require("jsonwebtoken");
 
 const User = require("../model/userModel");
 
-exports.signup = (req, res) => {
-  const user = new User({
-    name: req.body.name,
+exports.signup = async (req, res) => {
+  const newUser = User.create({
+    username: req.body.username,
     email: req.body.email,
-    password: bcrypt.hashSync(req.body.password, 8),
+    password: req.body.password,
   });
-  user.save();
-  res.status(201).json("user created");
+  const token = jwt.sign({ id: newUser._id }, process.env.API_SECRET, {
+    expiresIn: "90d",
+  });
+  res.status(201).json({
+    status: "success",
+    token,
+    message: "user created successfully",
+  });
 };
 
 exports.signin = async (req, res) => {
-  const user = await User.findOne({ email: req.body.email });
+  const { email, password } = req.body;
 
   try {
-    const match = await bcrypt.compare(req.body.password, user.password);
-    const accessToken = jwt.sign(JSON.stringify(user), process.env.API_SECRET);
-    if (match) {
-      res.json({ accessToken: accessToken });
-    } else {
-      res.json({ message: "Invalid Credentials" });
+    const user = await User.findOne({ email }).select("+password");
+
+    if (!user || !(await user.correctPassword(password, user.password))) {
+      return res.status(401).send("incorrect email or passowrd");
     }
+    const token = jwt.sign({ id: user._id }, process.env.API_SECRET, {
+      expiresIn: "90d",
+    });
+    res.status(200).json({
+      status: "success",
+      token,
+    });
   } catch (e) {
     console.log(e);
   }
