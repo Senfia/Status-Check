@@ -20,14 +20,14 @@ const LoginPage = () => {
 
   const handleLogin = () => {
     axios
-      .post("/login", {
+      .post("http://localhost:5000/login", {
         email,
         password,
       })
       .then((response) => {
         // If login is successful, redirect to the dashboard
         console.log("Login successful:", response.data);
-        navigate.push("/dashboard");
+        navigate("/dashboard");
       })
       .catch((error) => {
         console.error("Login failed:", error);

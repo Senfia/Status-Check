@@ -24,7 +24,7 @@ const RegistrationPage = () => {
 
   const handleRegistration = () => {
     axios
-      .post("/register", {
+      .post("http://localhost:5000/register", {
         username,
         email,
         password,
