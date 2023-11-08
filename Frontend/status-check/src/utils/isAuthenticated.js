@@ -1,11 +1,11 @@
 // isAuthenticated.js
-import jwt_decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 
 function isAuthenticated() {
-  const token = localStorage.getItem("authToken");
+  const token = localStorage.getItem("token");
 
   if (token) {
-    const decoded = jwt_decode(token);
+    const decoded = jwtDecode(token);
     return decoded;
   }
 

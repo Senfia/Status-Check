@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 //import NavBar from './NavBar'; // Assuming you've created the NavBar component
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
+import NavBar from "./NavBar";
 
 const SettingsPage = () => {
   const [username, setUsername] = useState("");
@@ -52,6 +53,9 @@ const SettingsPage = () => {
 
   return (
     <div>
+      <header>
+        <NavBar />
+      </header>
       <Container>
         <Row className="mt-4">
           <Col md="8">

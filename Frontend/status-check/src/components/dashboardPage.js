@@ -2,13 +2,14 @@ import React from "react";
 //import NavBar from './NavBar'; // Assuming you've created the NavBar component
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import NavBar from "./NavBar";
 
 const DashboardPage = () => {
   return (
     <div>
-      {/* <header>
+      <header>
         <NavBar />
-      </header> */}
+      </header>
       <Container>
         <Row className="mt-4">
           <Col md="8">

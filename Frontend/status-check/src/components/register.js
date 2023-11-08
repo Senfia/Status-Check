@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom"; // Import the Link and useNavigate components from React Router
 import axios from "axios";
+import DefaultNarv from "./DefaultNarv";
 
 const RegistrationPage = () => {
   const [username, setUsername] = useState("");
@@ -42,6 +43,9 @@ const RegistrationPage = () => {
 
   return (
     <div>
+      <header>
+        <DefaultNarv />
+      </header>
       <Container className="py-5">
         <Row className="justify-content-md-center">
           <Col md="6">

@@ -1,17 +1,15 @@
 import React from "react";
-import { Route, Navigate } from "react-router-dom";
+import { Outlet, Navigate, useLocation } from "react-router-dom"; // Import Navigate from react-router-dom
 import isAuthenticated from "./isAuthenticated"; // Import the isAuthenticated function
 
-const ProtectedRoute = ({ component: Component, ...rest }) => {
+const ProtectedRoute = () => {
   const user = isAuthenticated();
+  const location = useLocation();
 
-  return (
-    <Route
-      {...rest}
-      render={(props) =>
-        user ? <Component {...props} /> : <Navigate to="/login" />
-      }
-    />
+  return user ? (
+    <Outlet />
+  ) : (
+    <Navigate to="/login" state={{ form: location }} replace />
   );
 };
 

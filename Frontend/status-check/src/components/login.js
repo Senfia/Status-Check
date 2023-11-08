@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
+import DefaultNarv from "./DefaultNarv";
 import axios from "axios";
 
 const LoginPage = () => {
@@ -26,7 +27,16 @@ const LoginPage = () => {
       })
       .then((response) => {
         // If login is successful, redirect to the dashboard
+        //get token from response
+        const token = response.data.token;
+
+        //set JWT token to local
+        localStorage.setItem("token", token);
+
+        //set token to axios common header
+
         console.log("Login successful:", response.data);
+
         navigate("/dashboard");
       })
       .catch((error) => {
@@ -36,6 +46,9 @@ const LoginPage = () => {
 
   return (
     <div>
+      <header>
+        <DefaultNarv />
+      </header>
       <Container className="py-5 my-4">
         <Row className="justify-content-md-center">
           <Col md="6">
