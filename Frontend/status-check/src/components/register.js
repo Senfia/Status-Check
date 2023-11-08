@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom"; // Import the Link component from React Router
+import { Link, useNavigate } from "react-router-dom"; // Import the Link and useNavigate components from React Router
 import axios from "axios";
 
 const RegistrationPage = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate(); // Get the navigate function
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -22,9 +23,8 @@ const RegistrationPage = () => {
   };
 
   const handleRegistration = () => {
-    //make an API call to register the user
     axios
-      .post("/api/register", {
+      .post("/register", {
         username,
         email,
         password,
@@ -32,6 +32,7 @@ const RegistrationPage = () => {
       .then((response) => {
         // Handle the response from the server as needed
         console.log("Registration successful:", response.data);
+        navigate("/dashboard"); // Redirect to the dashboard
       })
       .catch((error) => {
         // Handle errors from the server, e.g., display an error message

@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom"; // Import the Link component from React Router
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
+import axios from "axios";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -16,10 +19,19 @@ const LoginPage = () => {
   };
 
   const handleLogin = () => {
-    // You can add your login logic here, e.g., making an API call to authenticate the user.
-    // For this example, we'll just log the email and password to the console.
-    console.log("Email:", email);
-    console.log("Password:", password);
+    axios
+      .post("/login", {
+        email,
+        password,
+      })
+      .then((response) => {
+        // If login is successful, redirect to the dashboard
+        console.log("Login successful:", response.data);
+        navigate.push("/dashboard");
+      })
+      .catch((error) => {
+        console.error("Login failed:", error);
+      });
   };
 
   return (
