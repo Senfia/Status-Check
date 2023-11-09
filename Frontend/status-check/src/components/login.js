@@ -74,12 +74,24 @@ const LoginPage = () => {
                 />
               </Form.Group>
 
-              <Button variant="primary" type="button" onClick={handleLogin}>
+              <Button
+                variant="primary"
+                type="button"
+                onClick={handleLogin}
+                style={{
+                  backgroundColor: "#9def6c",
+                  color: "#010101",
+                  borderColor: "#9def6c",
+                }}
+              >
                 Login
               </Button>
             </Form>
             <p className="mt-3">
-              Don't have an account? <Link to="/register">Register</Link>
+              Don't have an account?{" "}
+              <Link to="/register" style={{ color: "#9def6c" }}>
+                Register
+              </Link>
             </p>
           </Col>
         </Row>

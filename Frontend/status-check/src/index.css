@@ -42,4 +42,20 @@ footer {
 
 .btn {
   margin-top: 10px;
+  background-color: #9def6c;
+  color: black;
+  border-color: #9def6c;
+}
+
+.btn:hover {
+  background-color: #9def6c;
+  color: #fff;
+  border-color: #9def6c;
+}
+
+/* Header */
+.title-logo {
+  font-weight: 700;
+  padding-left: 5px;
+  font-size: 1.5rem !important;
 }

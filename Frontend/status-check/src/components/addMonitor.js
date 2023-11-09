@@ -91,6 +91,11 @@ const AddMonitorPage = () => {
                     variant="primary"
                     type="button"
                     onClick={handleAddMonitor}
+                    style={{
+                      backgroundColor: "#9def6c",
+                      color: "#010101",
+                      borderColor: "#9def6c",
+                    }}
                   >
                     Add Monitor
                   </Button>

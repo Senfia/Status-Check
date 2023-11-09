@@ -85,12 +85,25 @@ const RegistrationPage = () => {
                 variant="primary"
                 type="button"
                 onClick={handleRegistration}
+                style={{
+                  backgroundColor: "#9def6c",
+                  color: "#010101",
+                  borderColor: "#9def6c",
+                }}
               >
                 Register
               </Button>
             </Form>
             <p className="mt-3">
-              Already have an account? <Link to="/login">Log In</Link>
+              Already have an account?{" "}
+              <Link
+                to="/login"
+                style={{
+                  color: "#9def6c",
+                }}
+              >
+                Log In
+              </Link>
             </p>
           </Col>
         </Row>

@@ -14,7 +14,16 @@ const DashboardPage = () => {
         <Row className="mt-4">
           <Col md="8">
             <Link to="addmonitor">
-              <button className="btn btn-primary py-2">Add Monitor</button>
+              <button
+                className="btn btn-primary py-2"
+                style={{
+                  backgroundColor: "#9def6c",
+                  color: "#010101",
+                  borderColor: "#9def6c",
+                }}
+              >
+                Add Monitor
+              </button>
             </Link>
             <h2 className="py-4">Dashboard</h2>
 
