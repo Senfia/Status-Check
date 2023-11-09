@@ -13,7 +13,7 @@ const DashboardPage = () => {
       <Container>
         <Row className="mt-4">
           <Col md="8">
-            <Link to="addmonitor">
+            <Link to="/addmonitor">
               <button
                 className="btn btn-primary py-2"
                 style={{

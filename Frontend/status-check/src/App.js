@@ -8,6 +8,7 @@ import LoginPage from "./components/login"; // Import the login page
 import LogoutPage from "./components/LogOut";
 import RegistrationPage from "./components/register"; // Import the registration page
 import ProtectedRoute from "./utils/ProtectedRoute";
+//import HomePage from "./components/HomePage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="login" element={<LoginPage />} />
           <Route path="logout" element={<LogoutPage />} />
           <Route path="register" element={<RegistrationPage />} />
+          {/* <Route path="/" element={<HomePage />} /> */}
           <Route path="*" element={<Missing />} />
         </Routes>
       </main>
