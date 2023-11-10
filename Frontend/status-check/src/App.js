@@ -19,6 +19,7 @@ function App() {
             <Route path="dashboard" element={<DashboardPage />} />
             <Route path="settings" element={<SettingsPage />} />
             <Route path="addMonitor" element={<AddMonitorPage />} />
+            <Route path="/" element={<DashboardPage />} />
           </Route>
           <Route path="login" element={<LoginPage />} />
           <Route path="logout" element={<LogoutPage />} />
