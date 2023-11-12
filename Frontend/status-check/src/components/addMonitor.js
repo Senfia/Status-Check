@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-//import NavBar from './NavBar'; // Assuming you've created the NavBar component
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import axios from "axios"; // Import Axios
 import NavBar from "./NavBar";
 
 const AddMonitorPage = () => {
@@ -8,6 +9,8 @@ const AddMonitorPage = () => {
   const [name, setName] = useState("");
   const [monitorInterval, setMonitorInterval] = useState(15); // Default monitor interval in minutes
   const [notificationEmail, setNotificationEmail] = useState(""); // Notification email state
+  const [showSuccess, setShowSuccess] = useState(false); // State for success message
+  const navigate = useNavigate(); // Get the history object
 
   const handleUrlChange = (e) => {
     setUrl(e.target.value);
@@ -26,13 +29,29 @@ const AddMonitorPage = () => {
   };
 
   const handleAddMonitor = () => {
-    // You can implement the logic to add the monitor to your list of monitored services,
-    // including sending alerts to the notification email.
-    // For this example, we'll just log the entered data to the console.
-    console.log("URL:", url);
-    console.log("Name:", name);
-    console.log("Monitor Interval:", monitorInterval);
-    console.log("Notification Email:", notificationEmail);
+    const data = {
+      url,
+      name,
+      monitorInterval,
+      notificationEmail,
+    };
+
+    axios
+      .post("http://localhost:5000/add-monitor", data)
+      .then((response) => {
+        if (response.status === 200) {
+          setShowSuccess(true);
+          setTimeout(() => {
+            setShowSuccess(false);
+            navigate("/dashboard");
+          }, 3000);
+        } else {
+          console.error("Failed to add monitor");
+        }
+      })
+      .catch((error) => {
+        console.error("Network error:", error);
+      });
   };
 
   return (
@@ -42,6 +61,11 @@ const AddMonitorPage = () => {
       </header>
       <Container>
         <Row className="mt-4">
+          {showSuccess && (
+            <div className="success-message">
+              Monitor added successfully! Redirecting to dashboard...
+            </div>
+          )}
           <Col md="8">
             <h2>Add Monitor</h2>
             <Card>

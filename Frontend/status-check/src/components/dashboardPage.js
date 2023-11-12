@@ -1,10 +1,24 @@
-import React from "react";
-//import NavBar from './NavBar'; // Assuming you've created the NavBar component
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
+import axios from "axios"; // Import Axios
 
 const DashboardPage = () => {
+  const [monitorData, setMonitorData] = useState([]);
+
+  useEffect(() => {
+    // Fetch monitor data from the server using Axios
+    axios
+      .get("http://localhost:5000/monitor-data")
+      .then((response) => {
+        setMonitorData(response.data); // Set fetched data in the state
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
   return (
     <div>
       <header>
@@ -36,15 +50,17 @@ const DashboardPage = () => {
               </Card.Body>
             </Card>
 
-            <Card className="mt-3">
-              <Card.Header>Website Monitoring</Card.Header>
-              <Card.Body>
-                {/* Add website monitoring components here */}
-                <p>Website: www.google.com</p>
-                <p>Status: Online</p>
-                <p>Response Time: 120ms</p>
-              </Card.Body>
-            </Card>
+            {/* Display monitor data */}
+            {monitorData.map((monitor, index) => (
+              <Card key={index} className="mt-3">
+                <Card.Header>Website Monitoring</Card.Header>
+                <Card.Body>
+                  <p>Website: {monitor.website}</p>
+                  <p>Status: {monitor.status}</p>
+                  <p>Response Time: {monitor.responseTime}</p>
+                </Card.Body>
+              </Card>
+            ))}
           </Col>
 
           <Col md="4">
