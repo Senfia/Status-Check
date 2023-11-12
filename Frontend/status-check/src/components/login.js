@@ -10,6 +10,7 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  //const [showSuccess, setShowSuccess] = useState(false);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -36,6 +37,10 @@ const LoginPage = () => {
         //set token to axios common header
 
         console.log("Login successful:", response.data);
+        // setShowSuccess(true);
+        // setTimeout(() => {
+        //   setShowSuccess(false);
+        // }, 3000);
 
         navigate("/dashboard");
       })
@@ -51,6 +56,11 @@ const LoginPage = () => {
       </header>
       <Container className="py-5 my-4">
         <Row className="justify-content-md-center">
+          {/* {showSuccess && (
+            <div className="success-message">
+              Monitor added successfully! Redirecting to dashboard...
+            </div>
+          )} */}
           <Col md="6">
             <h2>Login</h2>
             <Form>
@@ -61,6 +71,8 @@ const LoginPage = () => {
                   placeholder="Enter email"
                   value={email}
                   onChange={handleEmailChange}
+                  required="required"
+                  data-validation-required-message="Please a valid email"
                 />
               </Form.Group>
 

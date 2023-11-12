@@ -10,7 +10,7 @@ const DashboardPage = () => {
   useEffect(() => {
     // Fetch monitor data from the server using Axios
     axios
-      .get("http://localhost:5000/monitor-data")
+      .get("http://localhost:5000/accounts")
       .then((response) => {
         setMonitorData(response.data); // Set fetched data in the state
       })

@@ -6,9 +6,9 @@ import NavBar from "./NavBar";
 
 const AddMonitorPage = () => {
   const [url, setUrl] = useState("");
-  const [name, setName] = useState("");
-  const [monitorInterval, setMonitorInterval] = useState(15); // Default monitor interval in minutes
-  const [notificationEmail, setNotificationEmail] = useState(""); // Notification email state
+  const [web_name, setweb_name] = useState("");
+  const [interval, setMonitorInterval] = useState(15); // Default monitor interval in minutes
+  const [email_alert, setNotificationEmail] = useState(""); // Notification email state
   const [showSuccess, setShowSuccess] = useState(false); // State for success message
   const navigate = useNavigate(); // Get the history object
 
@@ -17,7 +17,7 @@ const AddMonitorPage = () => {
   };
 
   const handleNameChange = (e) => {
-    setName(e.target.value);
+    setweb_name(e.target.value);
   };
 
   const handleMonitorIntervalChange = (e) => {
@@ -31,13 +31,13 @@ const AddMonitorPage = () => {
   const handleAddMonitor = () => {
     const data = {
       url,
-      name,
-      monitorInterval,
-      notificationEmail,
+      web_name,
+      interval,
+      email_alert,
     };
 
     axios
-      .post("http://localhost:5000/add-monitor", data)
+      .post("http://localhost:5000/accounts", data)
       .then((response) => {
         if (response.status === 200) {
           setShowSuccess(true);
@@ -86,7 +86,7 @@ const AddMonitorPage = () => {
                     <Form.Control
                       type="text"
                       placeholder="Enter Name"
-                      value={name}
+                      value={web_name}
                       onChange={handleNameChange}
                     />
                   </Form.Group>
@@ -96,7 +96,7 @@ const AddMonitorPage = () => {
                     <Form.Control
                       type="number"
                       placeholder="Enter Interval"
-                      value={monitorInterval}
+                      value={interval}
                       onChange={handleMonitorIntervalChange}
                     />
                   </Form.Group>
@@ -106,7 +106,7 @@ const AddMonitorPage = () => {
                     <Form.Control
                       type="email"
                       placeholder="Enter Email"
-                      value={notificationEmail}
+                      value={email_alert}
                       onChange={handleNotificationEmailChange}
                     />
                   </Form.Group>
