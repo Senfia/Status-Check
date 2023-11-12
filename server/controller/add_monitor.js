@@ -23,7 +23,7 @@ exports.addMonitor = async (req, res) => {
     const response = await axios.get(url);
 
     if (response.status === 200) {
-      res.send("system is up.");
+      res.status(200).send("system is up.");
     } else if (response.status === 404) {
       res.status(404).send("system is down.");
     } else {
@@ -37,5 +37,5 @@ exports.addMonitor = async (req, res) => {
     }
   }
 
-  //monitor.save();
+  monitor.save();
 };
