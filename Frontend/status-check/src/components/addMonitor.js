@@ -3,6 +3,7 @@ import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"; // Import Axios
 import NavBar from "./NavBar";
+import Alert from "react-bootstrap/Alert";
 
 const AddMonitorPage = () => {
   const [url, setUrl] = useState("");
@@ -63,7 +64,9 @@ const AddMonitorPage = () => {
         <Row className="mt-4">
           {showSuccess && (
             <div className="success-message">
-              Monitor added successfully! Redirecting to dashboard...
+              <Alert variant="success">
+                Monitor added successfully! Redirecting to dashboard...
+              </Alert>
             </div>
           )}
           <Col md="8">

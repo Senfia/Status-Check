@@ -71,7 +71,7 @@ const LoginPage = () => {
                   placeholder="Enter email"
                   value={email}
                   onChange={handleEmailChange}
-                  required="required"
+                  required
                   data-validation-required-message="Please a valid email"
                 />
               </Form.Group>
@@ -80,6 +80,7 @@ const LoginPage = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control
                   type="password"
+                  required
                   placeholder="Password"
                   value={password}
                   onChange={handlePasswordChange}
