@@ -11,6 +11,7 @@ const AddMonitorPage = () => {
   const [interval, setMonitorInterval] = useState(15); // Default monitor interval in minutes
   const [email_alert, setNotificationEmail] = useState(""); // Notification email state
   const [showSuccess, setShowSuccess] = useState(false); // State for success message
+  const [showFailed, setShowFailed] = useState(false); // State for success message
   const navigate = useNavigate(); // Get the history object
 
   const handleUrlChange = (e) => {
@@ -47,6 +48,10 @@ const AddMonitorPage = () => {
             navigate("/dashboard");
           }, 3000);
         } else {
+          setShowFailed(true);
+          setTimeout(() => {
+            setShowFailed(false);
+          });
           console.error("Failed to add monitor");
         }
       })
@@ -62,13 +67,6 @@ const AddMonitorPage = () => {
       </header>
       <Container>
         <Row className="mt-4">
-          {showSuccess && (
-            <div className="success-message">
-              <Alert variant="success">
-                Monitor added successfully! Redirecting to dashboard...
-              </Alert>
-            </div>
-          )}
           <Col md="8">
             <h2>Add Monitor</h2>
             <Card>
@@ -127,6 +125,19 @@ const AddMonitorPage = () => {
                     Add Monitor
                   </Button>
                 </Form>
+                {showSuccess && (
+                  <div className="success-message">
+                    <Alert variant="success">
+                      Monitor added successfully with current status:
+                      Redirecting to dashboard...
+                    </Alert>
+                  </div>
+                )}
+                {showFailed && (
+                  <div className="failure-message">
+                    <Alert variant="warning">Failed to add monitor.</Alert>
+                  </div>
+                )}
               </Card.Body>
             </Card>
           </Col>

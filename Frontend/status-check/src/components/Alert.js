@@ -4,7 +4,7 @@ function Alert() {
   return (
     <>
       {["success"].map((variant) => (
-        <Alert key={variant} variant={variant}></Alert>
+        <Alert></Alert>
       ))}
     </>
   );
