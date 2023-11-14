@@ -77,47 +77,53 @@ npm  install
 2.  Start  the  development  server:
 npm  run  dev
 
+```
+
 ### Usage
-1.  Add  a  Monitor:
--  Access  the  dashboard  and  click  "Add Monitor."
--  Fill  in  the  required  information  such  as  URL,  Name,  Monitor  Interval,  and  -  Notification  Email.
--  Click  "Add Monitor"  to  save  the  monitor.
 
-2.  View  Dashboard:
--  The  dashboard  displays  server  status,  website  monitoring  information,  and  recent  events.
+1.  Add a Monitor:
 
-3.  Data  Analysis:
--  Explore  the  data  visualisations  on  the  dashboard  to  analyse  historical  performance.
+- Access the dashboard and click "Add Monitor."
+- Fill in the required information such as URL, Name, Monitor Interval, and - Notification Email.
+- Click "Add Monitor" to save the monitor.
+
+2.  View Dashboard:
+
+- The dashboard displays server status, website monitoring information, and recent events.
+
+3.  Data Analysis:
+
+- Explore the data visualisations on the dashboard to analyse historical performance.
 
 ### Technologies Used
 
--  Frontend:
---  React
---  React  Router
---  Axios
---  React-Bootstrap
+- Frontend:
+  -- React
+  -- React Router
+  -- Axios
+  -- React-Bootstrap
 
--  Backend:
---  Node.js
---  Express
---  MongoDB
---  Mongoose
---  Axios
+- Backend:
+  -- Node.js
+  -- Express
+  -- MongoDB
+  -- Mongoose
+  -- Axios
 
 -Other:
---  Chart.js (for data  visualisation-  to  be  implemented)
---  Brevo (SMTP Relay)
-
+-- Chart.js (for data visualisation- to be implemented)
+-- Brevo (SMTP Relay)
 
 ### Authors
+
 **Senyo Fiawornu**
+
 - [Senfia](https://github.com/Senfia)
 
 **Joseph Darko**
+
 - [osomfonashticah](https://github.com/osomfonashticah)
 
 ### License
 
-This  project  is  licensed  under  the  MIT  License  -  see  the  LICENSE  file  for  details.
-
-```
+This project is licensed under the MIT License - see the LICENSE file for details.
