@@ -1,7 +1,7 @@
 # Status Check
 
 <a href="https://status-check-landing.cubemite.com/">
-    <img src="https://imgur.com/qKNiLQx" alt="Status Check" title="Status Check">
+    <img src="https://i.imgur.com/qKNiLQx.png" alt="Status Check" title="Status Check">
 </a>
 
 ## Web Service Monitoring System
