@@ -110,9 +110,9 @@ npm  run  dev
   -- Mongoose
   -- Axios
 
--Other:
--- Chart.js (for data visualisation- to be implemented)
--- Brevo (SMTP Relay)
+- Other:
+  -- Chart.js (for data visualisation- to be implemented)
+  -- Brevo (SMTP Relay)
 
 ### Authors
 
