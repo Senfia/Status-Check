@@ -5,6 +5,7 @@
 ## Overview
 
 This is a portfolio Project for ALX Software Engineering Program.
+
 Status Check is a comprehensive tool designed to monitor the health and performance of various web services, including websites, APIs, and servers. This system provides real-time insights, data visualisation, and alerting mechanisms to ensure proactive management of web services.
 
 ## Table of Contents
@@ -46,7 +47,6 @@ Status Check is a comprehensive tool designed to monitor the health and performa
 Ensure you have the following installed:
 
 - Node.js: [Download](https://nodejs.org/)
-
 - MongoDB: [Download](https://www.mongodb.com/try/download/community)
 
 ### Backend Installation
@@ -54,147 +54,68 @@ Ensure you have the following installed:
 1. Clone the repository:
 
 ```bash
-
-
-
 git  clone  https://github.com/Senfia/Status-Check.git
 
-
-
-
-
 1.  Navigate  to  the  project  directory:
-
-
-
 cd  server
 
-
-
-
-
 2.  Install  dependencies:
-
-
-
 npm  install
 
-
-
-
-3.  Set up the  MongoDB database.  Update  the  MongoDB  connection  string  in  .env:
-
-
-
+3.  Set  up  the  MongoDB  database.  Update  the  MongoDB  connection  string  in  .env:
 MONGO_URI=mongodb://localhost:27017/your-database-name
 
-
-
-
-
 4.  Start  the  development  server:
-
-
-
 npm  run  dev
-
-
-
 
 ### Frontend Installation
-
-
-
 1.  Navigate  to  the  Frontend  directory:
-
-
-
 cd  Frontend
-
 .  Install  dependencies:
-
 npm  install
 
-
-
 2.  Start  the  development  server:
-
-
-
 npm  run  dev
 
-
-
 ### Usage
-
-
-
 1.  Add  a  Monitor:
-
 -  Access  the  dashboard  and  click  "Add Monitor."
-
--  Fill in the required information such as  URL,  Name,  Monitor  Interval,  and  -  Notification  Email.
-
--  Click  "Add Monitor"  to save the monitor.
-
-
-
+-  Fill  in  the  required  information  such  as  URL,  Name,  Monitor  Interval,  and  -  Notification  Email.
+-  Click  "Add Monitor"  to  save  the  monitor.
 
 2.  View  Dashboard:
-
--  The dashboard displays server status,  website monitoring information,  and recent events.
-
-
+-  The  dashboard  displays  server  status,  website  monitoring  information,  and  recent  events.
 
 3.  Data  Analysis:
-
--  Explore the data visualisations on the dashboard to analyse historical performance.
-
-
-
-
+-  Explore  the  data  visualisations  on  the  dashboard  to  analyse  historical  performance.
 
 ### Technologies Used
 
-
-
 -  Frontend:
-
 --  React
-
 --  React  Router
-
 --  Axios
-
 --  React-Bootstrap
 
-
-
 -  Backend:
-
 --  Node.js
-
 --  Express
-
 --  MongoDB
-
 --  Mongoose
-
 --  Axios
 
-
-
 -Other:
-
 --  Chart.js (for data  visualisation-  to  be  implemented)
-
 --  Brevo (SMTP Relay)
 
+
 ### Contributors
- - [Senyo Fiawornu](https://github.com/Senfia)
- - [Joseph Darko](https://github.com/osomfonashticah)
+
+- [Senyo Fiawornu](https://github.com/Senfia)
+- [Joseph Darko](https://github.com/osomfonashticah)
 
 ### License
 
-This project is licensed under the  MIT  License  -  see the  LICENSE  file for details.
+This  project  is  licensed  under  the  MIT  License  -  see  the  LICENSE  file  for  details.
+
 ```
