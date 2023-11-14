@@ -24,7 +24,7 @@ Status Check is a comprehensive tool designed to monitor the health and performa
 
 - [Technologies Used](#technologies-used)
 
-- [Contributing](#contributing)
+- [Authors](#authors)
 
 - [License](#license)
 
