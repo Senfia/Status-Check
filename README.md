@@ -109,10 +109,12 @@ npm  run  dev
 --  Brevo (SMTP Relay)
 
 
-### Contributors
+### Authors
+**Senyo Fiawornu**
+- [Senfia](https://github.com/Senfia)
 
-- [Senyo Fiawornu](https://github.com/Senfia)
-- [Joseph Darko](https://github.com/osomfonashticah)
+**Joseph Darko**
+- [osomfonashticah](https://github.com/osomfonashticah)
 
 ### License
 
