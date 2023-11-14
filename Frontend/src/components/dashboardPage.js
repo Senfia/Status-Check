@@ -5,15 +5,14 @@ import NavBar from "./NavBar";
 import axios from "axios"; // Import Axios
 
 const DashboardPage = () => {
-  const [monitorData, setMonitorData] = useState([]);
+  const [monitorData, setMonitorData] = useState([{}]);
 
   useEffect(() => {
     // Fetch monitor data from the server using Axios
     axios
       .get("http://localhost:5000/accounts:id")
-      .then((response) => {
-        setMonitorData(response.data); // Set fetched data in the state
-      })
+      .then((response) => response.json())
+      .then((data) => setMonitorData(data))
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
@@ -55,7 +54,7 @@ const DashboardPage = () => {
               <Card key={index} className="mt-3">
                 <Card.Header>Website Monitoring</Card.Header>
                 <Card.Body>
-                  <p>Website: {monitor.website}</p>
+                  <p>Website: {monitor.web_name}</p>
                   <p>Status: {monitor.status}</p>
                   <p>Response Time: {monitor.responseTime}</p>
                 </Card.Body>
