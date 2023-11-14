@@ -97,22 +97,25 @@ npm  run  dev
 
 ### Technologies Used
 
-- Frontend:
-  -- React
-  -- React Router
-  -- Axios
-  -- React-Bootstrap
+#### Frontend:
 
-- Backend:
-  -- Node.js
-  -- Express
-  -- MongoDB
-  -- Mongoose
-  -- Axios
+- React
+- React Router
+- Axios
+- React-Bootstrap
 
-- Other:
-  -- Chart.js (for data visualisation- to be implemented)
-  -- Brevo (SMTP Relay)
+### Backend:
+
+- Node.js
+- Express
+- MongoDB
+- Mongoose
+- Axios
+
+### Other:
+
+- Chart.js (for data visualisation- to be implemented)
+- Brevo (SMTP Relay)
 
 ### Authors
 
