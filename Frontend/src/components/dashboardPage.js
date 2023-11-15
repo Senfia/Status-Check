@@ -2,17 +2,20 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
+import Table from "react-bootstrap/Table";
 import axios from "axios"; // Import Axios
 
 const DashboardPage = () => {
-  const [monitorData, setMonitorData] = useState([{}]);
+  const [monitorData, setMonitorData] = useState([]);
 
   useEffect(() => {
     // Fetch monitor data from the server using Axios
     axios
-      .get("http://localhost:5000/accounts:id")
-      .then((response) => response.json())
-      .then((data) => setMonitorData(data))
+      .get("http://localhost:5000/monitors")
+      .then((response) => {
+        setMonitorData(response.data.monitors || []);
+        console.log(response.data);
+      })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
@@ -54,9 +57,44 @@ const DashboardPage = () => {
               <Card key={index} className="mt-3">
                 <Card.Header>Website Monitoring</Card.Header>
                 <Card.Body>
-                  <p>Website: {monitor.web_name}</p>
-                  <p>Status: {monitor.status}</p>
-                  <p>Response Time: {monitor.responseTime}</p>
+                  <Table striped borderless hover variant="dark">
+                    <thead>
+                      <tr>
+                        <th>
+                          <div>Monitor URL</div>
+                        </th>
+                        <th>
+                          <div>Website</div>
+                        </th>
+                        <th>
+                          <div>Status</div>
+                        </th>
+                        <th>
+                          <div>Response Time</div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div>
+                            <a href="{monitor.url}" target="_blank">
+                              {monitor.url}
+                            </a>
+                          </div>
+                        </td>
+                        <td>
+                          <div>{monitor.web_name}</div>
+                        </td>
+                        <td>
+                          <div></div>
+                        </td>
+                        <td>
+                          <div></div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </Table>
                 </Card.Body>
               </Card>
             ))}

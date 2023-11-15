@@ -39,7 +39,7 @@ const AddMonitorPage = () => {
     };
 
     axios
-      .post("http://localhost:5000/accounts", data)
+      .post("http://localhost:5000/monitors", data)
       .then((response) => {
         if (response.status === 200) {
           setShowSuccess(true);
