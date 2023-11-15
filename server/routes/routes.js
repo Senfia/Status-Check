@@ -2,7 +2,11 @@ const express = require("express");
 const { signup, signin } = require("../authentication/auth");
 const { addMonitor } = require("../controller/add_monitor");
 const Monitor = require("../model/monitor");
-const { getMonitors, updateMonitors } = require("../controller/getMonitor");
+const {
+  getMonitors,
+  updateMonitors,
+  deleteMonitor,
+} = require("../controller/getMonitor");
 
 const router = express.Router();
 
@@ -21,5 +25,6 @@ router.post("/monitors", addMonitor);
 // });
 router.get("/monitors", getMonitors);
 router.put("/monitors/:id", updateMonitors);
+router.delete("/monitors/:id", deleteMonitor);
 
 module.exports = router;

@@ -152,4 +152,22 @@ const updateMonitors = async (req, res) => {
   }
 };
 
+// Delete monitor by ID
+const deleteMonitor = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const monitor = await Monitor.findByIdAndDelete(id);
+
+    if (!monitor) {
+      return res.status(404).json({ error: "Monitor not found" });
+    }
+
+    res.json({ message: "Monitor deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting monitor:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
 module.exports = { getMonitors };
