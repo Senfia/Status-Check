@@ -53,29 +53,31 @@ const DashboardPage = () => {
             </Card>
 
             {/* Display monitor data */}
-            {monitorData.map((monitor, index) => (
-              <Card key={index} className="mt-3">
-                <Card.Header>Website Monitoring</Card.Header>
-                <Card.Body>
-                  <Table striped borderless hover variant="dark">
-                    <thead>
-                      <tr>
-                        <th>
-                          <div>Monitor URL</div>
-                        </th>
-                        <th>
-                          <div>Website</div>
-                        </th>
-                        <th>
-                          <div>Status</div>
-                        </th>
-                        <th>
-                          <div>Response Time</div>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
+
+            <Card className="mt-3">
+              <Card.Header>Website Monitoring</Card.Header>
+              <Card.Body>
+                <Table striped borderless hover variant="dark">
+                  <thead>
+                    <tr>
+                      <th>
+                        <div>Monitor URL</div>
+                      </th>
+                      <th>
+                        <div>Website</div>
+                      </th>
+                      <th>
+                        <div>Status</div>
+                      </th>
+                      <th>
+                        <div>Response Time</div>
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {monitorData.map((monitor, index) => (
+                      <tr key={index}>
                         <td>
                           <div>
                             <a href="{monitor.url}" target="_blank">
@@ -87,17 +89,17 @@ const DashboardPage = () => {
                           <div>{monitor.web_name}</div>
                         </td>
                         <td>
-                          <div></div>
+                          <div>{monitor.status}</div>
                         </td>
                         <td>
-                          <div></div>
+                          <div>{monitor.web_name}</div>
                         </td>
                       </tr>
-                    </tbody>
-                  </Table>
-                </Card.Body>
-              </Card>
-            ))}
+                    ))}
+                  </tbody>
+                </Table>
+              </Card.Body>
+            </Card>
           </Col>
 
           <Col md="4">

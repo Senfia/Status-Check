@@ -22,6 +22,25 @@ const MonitorSchema = new Schema({
   email_alert: {
     type: String,
   },
+  lastChecked: {
+    type: Date,
+  },
+  status: {
+    type: String,
+    enum: ["up", "down"],
+    default: "up",
+  },
+  uptime: {
+    type: Number,
+    default: 100, // Initially assume 100% uptime
+  },
+  lastChecked: {
+    type: Date,
+  },
+  responseTime: {
+    type: Number,
+    default: 0,
+  },
 });
 
 const Monitor = mongoose.model("Monitor", MonitorSchema);
