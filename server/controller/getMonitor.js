@@ -170,4 +170,4 @@ const deleteMonitor = async (req, res) => {
   }
 };
 
-module.exports = { getMonitors };
+module.exports = { getMonitors, updateMonitors, deleteMonitor };
