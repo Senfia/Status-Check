@@ -86,7 +86,7 @@ const DashboardPage = () => {
                           </div>
                         </td>
                         <td>
-                          <div>{monitor.web_name}</div>
+                          <div className="monitor">{monitor.web_name}</div>
                         </td>
                         <td>
                           <div>{monitor.status}</div>

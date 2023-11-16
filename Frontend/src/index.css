@@ -71,7 +71,7 @@ footer {
   border-color: black !important;
 }
 
-a {
+monitor > a {
   color: #9def6c !important;
   text-decoration: underline;
 }

@@ -92,21 +92,7 @@ const DashboardPage = () => {
             {/* {monitors.map((monitor, index) => ( */}
             <Card className="mt-3">
               <Card.Header>
-                {/* {monitor.web_name}
-                  <Button
-                    variant="outline-primary"
-                    className="float-right"
-                    onClick={() => handleEditClick(monitor)}
-                  >
-                    Edit
-                  </Button>
-                  <Button
-                    variant="outline-danger"
-                    className="float-right mr-2"
-                    onClick={() => handleDeleteClick(monitor._id)}
-                  >
-                    Delete
-                  </Button> */}
+                <h4>Monitors</h4>
               </Card.Header>
               <Card.Body>
                 {/* Display monitor details here */}
