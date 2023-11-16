@@ -1,8 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import DashboardPage from "./components/dashboardPage";
+// import DashboardPage from "./components/dashboardPage";
+import DashboardPage from "./components/DashboardPage-";
 import SettingsPage from "./components/settingsPage";
 import Footer from "./components/footer";
-import AddMonitorPage from "./components/addMonitor";
+// import AddMonitorPage from "./components/addMonitor";
 import Missing from "./components/Missing";
 import LoginPage from "./components/login"; // Import the login page
 import LogoutPage from "./components/LogOut";
@@ -18,7 +19,7 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route path="dashboard" element={<DashboardPage />} />
             <Route path="settings" element={<SettingsPage />} />
-            <Route path="addMonitor" element={<AddMonitorPage />} />
+            {/* <Route path="addMonitor" element={<AddMonitorPage />} /> */}
             <Route path="/" element={<DashboardPage />} />
           </Route>
           <Route path="login" element={<LoginPage />} />
