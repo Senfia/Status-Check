@@ -71,7 +71,7 @@ const MonitorModal = ({ show, handleClose, handleSubmit, monitorData }) => {
             />
           </Form.Group>
           <Form.Group controlId="formBasicMonitorInterva">
-            <Form.Label>Monitor Interval (minutes)</Form.Label>
+            <Form.Label>Monitor Interval (seconds)</Form.Label>
             <Form.Control
               type="number"
               placeholder="Enter Interval"
@@ -81,7 +81,7 @@ const MonitorModal = ({ show, handleClose, handleSubmit, monitorData }) => {
             />
           </Form.Group>
           <Form.Group controlId="formBasicNotificationEmail">
-            <Form.Label>Notification Email (minutes)</Form.Label>
+            <Form.Label>Notification Email</Form.Label>
             <Form.Control
               type="email"
               placeholder="Enter Email"
