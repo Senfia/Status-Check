@@ -122,7 +122,11 @@ const DashboardPage = () => {
                       <tr key={index}>
                         <td>
                           <div>
-                            <a href={monitor.url} target="_blank">
+                            <a
+                              href={monitor.url}
+                              target="_blank"
+                              style={{ color: "#9def6c" }}
+                            >
                               {monitor.url}
                             </a>
                             <div>
