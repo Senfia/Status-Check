@@ -10,7 +10,7 @@ exports.signup = async (req, res) => {
     password: req.body.password,
   });
   const token = jwt.sign({ id: newUser._id }, process.env.API_SECRET, {
-    expiresIn: "90d",
+    expiresIn: "2d",
   });
   res.status(201).json({
     status: "success",
@@ -29,7 +29,7 @@ exports.signin = async (req, res) => {
       return res.status(401).send("incorrect email or passowrd");
     }
     const token = jwt.sign({ id: user._id }, process.env.API_SECRET, {
-      expiresIn: "90d",
+      expiresIn: "2d",
     });
     res.status(200).json({
       status: "success",
