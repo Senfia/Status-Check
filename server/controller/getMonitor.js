@@ -7,12 +7,12 @@ const { performance } = require("perf_hooks");
 require("dotenv").config();
 
 const transporter = nodemailer.createTransport({
-  service: "",
+  service: process.env.EMAIL_SERVICE,
   port: 587,
   secure: false,
   auth: {
-    user: "",
-    pass: "",
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASSWORD,
   },
 });
 
