@@ -35,8 +35,6 @@ const LoginPage = () => {
         localStorage.setItem("token", token);
 
         //set token to axios common header
-
-        console.log("Login successful:", response.data);
         // setShowSuccess(true);
         // setTimeout(() => {
         //   setShowSuccess(false);
@@ -56,11 +54,6 @@ const LoginPage = () => {
       </header>
       <Container className="py-5 my-4">
         <Row className="justify-content-md-center">
-          {/* {showSuccess && (
-            <div className="success-message">
-              Monitor added successfully! Redirecting to dashboard...
-            </div>
-          )} */}
           <Col md="6">
             <h2>Login</h2>
             <Form>
